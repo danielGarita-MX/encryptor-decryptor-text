@@ -1,0 +1,22 @@
+Las llaves de encriptación son las siguientes:
+ * La letra "e" es convertida para "enter".
+ * La letra "i" es convertida para "imes".
+ * La letra "a" es convertida para "ai".
+ * La letra "o" es convertida para "ober".
+ * La letra "u" es convertida para "ufat".
+
+Para poder encriptar / desencriptar un texto:
+ * La página debe tener campos para la inserción del texto 
+   que será encriptado o desencriptado.
+ * Debe incluir solo letras minúsculas.
+ * No debe contener letras con acentos ni caracteres especiales.
+ * Debe ser posible encriptar un texto y también desencriptarlo.
+ * El resultado debe ser mostrado en la pantalla.
+
+Funcionalidades extras:
+ * Un botón que copie el texto encriptado / desencriptado.
+
+ Mensaje secreto a desencriptar:
+  * fenterlimescimesdaidenters poberr enternfrenterntair enterstenter
+    dentersaifimesober y haibenterrlober cobernclufatimesdober cobern 
+    enterximestober!

@@ -1,0 +1,92 @@
+/* Hoja de estilos para la página 'index.html' */
+
+/* Contenedor principal 'main' que contiene a el área de texto a encriptar / desencriptar
+   y al contenedor de los botones de acción */
+main {
+  width: 100%;
+  background: red;
+  padding: 20px;
+  box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+/* Contenedor de área de cáptura de texto y botones de acción */
+.text-input {
+  background: purple;
+  width: 60%;
+  height: auto;
+  padding: 2%;
+  box-sizing: border-box;
+  float: left;
+}
+
+/* Estilos para el 'textarea' */
+.text-io {
+  display: block;
+  resize: none;
+  width: 95%;
+  margin: 0 auto;
+  height: 400px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Source Code Pro", monospace;
+  line-height: 25px;
+  text-align: justify;
+}
+
+/* Contenedor de botones de acción (encriptar / desencriptar) */
+.text-actions-buttons {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background: violet;
+}
+
+/* Botones de acción */
+.button-action {
+  width: 125px;
+  height: 35px;
+  border-radius: 10px;
+  box-shadow: 0.5px 5px 5px rgba(1, 1, 1, 0.4);
+}
+
+/* Botón para encriptar */
+.text-actions-buttons > button:first-child {
+  background: lightblue;
+  margin-left: 65px;
+}
+
+/* Botón para desencriptar */
+.text-actions-buttons > button:nth-child(2) {
+  background: lightslategray;
+  margin-left: 20px;
+}
+
+/* Área de salida de texto y botones de acción */
+.text-output {
+  background: blue;
+  width: 38%;
+  height: auto;
+  padding: 2%;
+  float: right;
+  box-sizing: border-box;
+}
+
+
+
+/* Estilos para el pie de página */
+.info-author {
+  clear: both;
+  background: yellow;
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  bottom: 0;
+  box-sizing: border-box;
+}
