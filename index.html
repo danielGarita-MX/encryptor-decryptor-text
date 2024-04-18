@@ -19,19 +19,20 @@
     <main>
       <div class="text-input">
         <textarea cols="20" rows="10" placeholder="Ingresa el texto a encriptar"
-                  autofocus name="textInput" class="text-io"></textarea>
+                  autofocus name="textInput" class="text-io" id="textRead"></textarea>
         
         <div class="text-actions-buttons">
-          <button title="Encriptar" class="button-action" name="buttonEncrypt">Encriptar</button>
-          <button title="Desencriptar" class="button-action" name="buttonDecrypt">Desencriptar</button>
+          <button title="Encriptar" class="button-action" id="encrypt">Encriptar</button>
+          <button title="Desencriptar" class="button-action" id="decrypt">Desencriptar</button>
         </div>
       </div>
 
       <div class="text-output">
         <textarea cols="20" rows="10" readonly placeholder="Aquí aparecerá el texto"
-                  name="textOutput" class="text-io"></textarea>
-
-        <button title="Copiar" class="button-action" name="buttonCopy">Copiar</button>
+                  name="textOutput" class="text-io" id="textView"></textarea>
+        <div class="text-actions-buttons">
+          <button title="Copiar" class="button-action" id="copy">Copiar</button>
+        </div>
       </div>
     </main>
 
@@ -42,5 +43,7 @@
         <a href="#" target="_blank" class="linkSocial" title="Linkedin">Linkedin</a>
       </div>
     </footer>
+
+    <script src="/scripts/encryptor.js"></script>
   </body>
 </html>

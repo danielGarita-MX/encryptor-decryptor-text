@@ -4,4 +4,4 @@
 *, *:after, *:before 
 {margin: 0;padding: 0;text-decoration: none;}
 
-body{font-size: 100%;list-style-type: none;}
+body{font-size: 100%;list-style-type: none;font-family: "Source Code Pro", monospace;}
