@@ -12,15 +12,6 @@ const outputText = document.querySelector('#textView');
    una cadena vacia. */
 const verifyEntry = /^[a-z]+(?:\s[a-z]+)*$/;
 
-/* Diccionario de datos para encriptar el texto */
-const replaceChar = {
-  "a" : "ai",
-  "e" : "enter",
-  "i" : "imes",
-  "o" : "ober",
-  "u" : "ufat"
-};
-
 /* Validación y encriptación de la entrada */
 btnEncrypt.addEventListener("click", () => {
   let encryptText = document.querySelector('#textRead').value;
@@ -36,19 +27,59 @@ btnEncrypt.addEventListener("click", () => {
 /* Encriptación de la cadena de texto */
 function encrypt(input){
   let result = "";
-  let singleWord = input.split(' ');
 
-  /* Recorrido de la cadena y busqueda de ocurrencias
-     con el diccionario de datos. */
-  for(let i in singleWord){
-    alert(singleWord[i]);
-    result = result + ' ' + singleWord[i];
-  }
-  
-  
+  /* Busqueda de los carácteres a encriptar a través de patrones con modificadores:
+     g: Busca todas las coincidencias (no solo la primera).
+     m: Busqueda multilinea para saltos de linea */
+  result = input.replace(/e/gm,"enter")
+                .replace(/i/gm,"imes")
+                .replace(/a/gm,"ai")
+                .replace(/o/gm,"ober")
+                .replace(/u/gm,"ufat");
 
   return result;
 }
+
+/* Validación y desencriptación de la entrada */
+btnDecrypt.addEventListener("click", () => {
+  let DecryptText = document.querySelector('#textRead').value;
+
+  if(verifyEntry.test(DecryptText)){ /* Si la cadena cumple, procedemos a operar */
+    replaceText(outputText, Decrypt(DecryptText));
+  }else{
+    /* Si la cadena no cumple */
+    alert("Introduce una cadena valida");
+  }
+});
+
+/* Desencriptación de la cadena de texto */
+function Decrypt(input){
+  let result = "";
+
+  /* Busqueda de las subcadenas a desencriptar a través de patrones con modificadores:
+     g: Busca todas las coincidencias (no solo la primera).
+     m: Busqueda multilinea para saltos de linea */
+  result = input.replace(/imes/gm,"i")
+                .replace(/enter/gm,"e")
+                .replace(/ai/gm,"a")
+                .replace(/ober/gm,"o")
+                .replace(/ufat/gm,"u");
+
+  return result;
+}
+
+/* Función que permite copiar el texto generado */
+btnCopy.addEventListener("click", () => {
+  let copyText = outputText.value;
+  navigator.clipboard.writeText(copyText)
+    .then(() => {
+      alert('Contenido copiado al portapapeles');
+      /* Resuelto - texto copiado al portapapeles con éxito */
+    },() => {
+      alert('Error al copiar');
+      /* Rechazado - fallo al copiar el texto al portapapeles */
+  });
+});
 
 // Modifica el árbol DOM, añadiendo texto a un elemento
 function replaceText(elemento, texto) {
