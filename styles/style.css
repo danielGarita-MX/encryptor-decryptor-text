@@ -3,18 +3,16 @@
 /* Contenedor principal 'main' que contiene a el área de texto a encriptar / desencriptar
    y al contenedor de los botones de acción */
 main {
+  background: linear-gradient(#F2F3F4 60%, #BDC3C7);
   width: 100%;
-  background: red;
   padding: 20px;
   box-sizing: border-box;
   height: auto;
   overflow: hidden;
-  margin-bottom: 20px;
 }
 
 /* Contenedor de área de cáptura de texto y botones de acción */
 .text-input {
-  background: purple;
   width: 60%;
   height: auto;
   padding: 2%;
@@ -35,6 +33,8 @@ main {
   font-size: 18px;
   line-height: 25px;
   text-align: justify;
+  border-radius: 20px;
+  box-shadow: 0.5px 3.5px 25px rgba(1, 1, 1, 0.3);
 }
 
 /* Contenedor de botones de acción (encriptar / desencriptar) */
@@ -44,7 +44,6 @@ main {
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background: violet;
   justify-content: space-evenly;
 }
 
@@ -57,7 +56,7 @@ main {
 }
 
 /* Botón para encriptar */
-.text-actions-buttons > button:first-child {
+.text-actions-buttons > button:nth-child(1) {
   background: lightblue;
 }
 
@@ -68,7 +67,6 @@ main {
 
 /* Área de salida de texto y botones de acción */
 .text-output {
-  background: blue;
   width: 38%;
   height: auto;
   padding: 2%;
@@ -80,17 +78,17 @@ main {
 }
 
 /* Selección de botón 'copiar' */
-.text-output > button {
-  background: lightcoral;
+.text-output > button:first-child {
+  background: red;
 }
 
 /* Estilos para el pie de página */
 .info-author {
+  background-image: url('/images/texture-background.jpg');
   clear: both;
-  background: yellow;
   width: 100%;
   height: auto;
-  padding: 2%;
+  padding: 40px 0;
   bottom: 0;
   box-sizing: border-box;
   text-align: center;
@@ -99,6 +97,7 @@ main {
 /* Estilos para el nombre */
 .info-author > p {
   font-size: 12px;
+  color: #FFFFFF;
   font-weight: bold;
   margin: 20px auto;
 }
