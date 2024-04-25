@@ -11,16 +11,23 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+          rel="stylesheet">
 
     <title>Challenge One</title>
   </head>
+
   <body>
     <main>
       <div class="text-input">
         <textarea cols="20" rows="10" placeholder="Ingresa el texto a encriptar"
                   autofocus name="textInput" class="text-io" id="textRead"></textarea>
         
+        <span class="text-info">
+          <span class="symbol-info"></span>
+          Solo letras minúsculas sin carácteres especiales.
+        </span>
+
         <div class="text-actions-buttons">
           <button title="Encriptar" class="button-action" id="encrypt">Encriptar</button>
           <button title="Desencriptar" class="button-action" id="decrypt">Desencriptar</button>
@@ -28,8 +35,16 @@
       </div>
 
       <div class="text-output">
-        <textarea cols="20" rows="10" readonly placeholder="Aquí aparecerá el texto"
-                  name="textOutput" class="text-io" id="textView"></textarea>
+        <textarea cols="20" rows="10" readonly name="textOutput" class="text-io" id="textView"
+                  disabled></textarea>
+                  
+        <div id="display">
+          <span class="text-info">
+            <span class="symbol-info"></span>
+            Ningún texto fue encontrado.
+          </span>
+        </div>
+
         <div class="text-actions-buttons">
           <button title="Copiar" class="button-action" id="copy">Copiar</button>
         </div>
@@ -39,8 +54,18 @@
     <footer>
       <div class="info-author">
         <p>&#169; 2024 Brandon Daniel Garita Romero</p>
-        <a href="#" target="_blank" class="linkSocial" title="GitHub">GitHub</a>
-        <a href="#" target="_blank" class="linkSocial" title="Linkedin">Linkedin</a>
+
+        <div class="img-media">
+          <a href="https://github.com/danielGarita-MX?tab=repositories" target="_blank" 
+             class="linkSocial" title="GitHub">
+            <img class="link-media" src="/images/github.png" alt="Mi GitHub">
+          </a>
+
+          <a href="www.linkedin.com/in/garita-romero-brandon-daniel-a305222b1" target="_blank" 
+             class="linkSocial" title="Linkedin">
+            <img class="link-media" src="/images/linkedin.png" alt="Mi Linkedin">
+          </a>
+        </div>
       </div>
     </footer>
 

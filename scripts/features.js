@@ -3,6 +3,9 @@ const btnEncrypt = document.querySelector('#encrypt');
 const btnDecrypt = document.querySelector('#decrypt');
 const btnCopy = document.querySelector('#copy');
 
+/* Texto que acompaña al recuadro de salida */
+const messageDisplay = document.querySelector('#display');
+
 /* Área para mostrar el texto */
 const outputText = document.querySelector('#textView');
 
@@ -18,13 +21,17 @@ btnEncrypt.addEventListener("click", () => {
 
   if(verifyEntry.test(encryptText)){ /* Si la cadena cumple, procedemos a operar */
     replaceText(outputText, encrypt(encryptText));
+    messageDisplay.style.opacity='0';
+    outputText.style.background='linear-gradient(#3a506b 80%, #1c2541)';
+    outputText.style.border='0.5px solid red';
+    btnCopy.style.display="list-item";
   }else{
     /* Si la cadena no cumple */
     alert("Introduce una cadena valida");
   }
 });
 
-/* Encriptación de la cadena de texto */
+/* Función de encriptación de la cadena de texto */
 function encrypt(input){
   let result = "";
 
@@ -46,13 +53,17 @@ btnDecrypt.addEventListener("click", () => {
 
   if(verifyEntry.test(DecryptText)){ /* Si la cadena cumple, procedemos a operar */
     replaceText(outputText, Decrypt(DecryptText));
+    messageDisplay.style.opacity='0';
+    outputText.style.background='linear-gradient(#3a506b 80%, #1c2541)';
+    outputText.style.border='0.5px solid red';
+    btnCopy.style.display="list-item";
   }else{
     /* Si la cadena no cumple */
     alert("Introduce una cadena valida");
   }
 });
 
-/* Desencriptación de la cadena de texto */
+/* Función de desencriptación de la cadena de texto */
 function Decrypt(input){
   let result = "";
 
@@ -71,18 +82,17 @@ function Decrypt(input){
 /* Función que permite copiar el texto generado */
 btnCopy.addEventListener("click", () => {
   let copyText = outputText.value;
+
   navigator.clipboard.writeText(copyText)
     .then(() => {
       alert('Contenido copiado al portapapeles');
-      /* Resuelto - texto copiado al portapapeles con éxito */
     },() => {
       alert('Error al copiar');
-      /* Rechazado - fallo al copiar el texto al portapapeles */
   });
 });
 
 // Modifica el árbol DOM, añadiendo texto a un elemento
 function replaceText(elemento, texto) {
   elemento.innerHTML = texto;
-  return; // La función no retorna nada, pero es una buena práctica
+  return;
 }

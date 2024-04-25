@@ -3,7 +3,7 @@
 /* Contenedor principal 'main' que contiene a el área de texto a encriptar / desencriptar
    y al contenedor de los botones de acción */
 main {
-  background: linear-gradient(#F2F3F4 60%, #BDC3C7);
+  background: linear-gradient(#3a506b 57%, #1c2541);
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -11,58 +11,101 @@ main {
   overflow: hidden;
 }
 
-/* Contenedor de área de cáptura de texto y botones de acción */
+/* Contenedor de área de cáptura de texto y botones de acción (encriptar / desencriptar) */
 .text-input {
   width: 60%;
   height: auto;
   padding: 2%;
   box-sizing: border-box;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Estilos para el 'textarea' */
+/* Estilos para el área de captura y salida de texto */
 .text-io {
-  display: block;
   resize: none;
   width: 95%;
   margin: 0 auto;
   height: 400px;
   margin-bottom: 20px;
-  padding: 15px;
+  padding: 20px;
   box-sizing: border-box;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 20px;
+  line-height: 30px;
   text-align: justify;
   border-radius: 20px;
-  box-shadow: 0.5px 3.5px 25px rgba(1, 1, 1, 0.3);
+  background: linear-gradient(#3a506b 80%, #1c2541);
+  box-shadow: 0px 0px 30px rgba(225, 250, 249, 0.5);
+  border: none;
+  color: #dad2d8;
+  font-weight: bold;
+
+}
+
+/* Estilos para el 'placeholder' de un textarea */
+.text-io::placeholder {
+  color: #dad2d8;
+  text-align: center;
+  font-size: 30px;
+  opacity: 0.4;
+}
+
+/* Textos informativos */
+.text-info {
+  text-align: center;
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+/* Simbolo informativo */
+.symbol-info {
+  padding: 10px;
+  background: url(../images/information.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 10px;
 }
 
 /* Contenedor de botones de acción (encriptar / desencriptar) */
 .text-actions-buttons {
-  width: 60%;
+  width: 90%;
   display: flex;
   margin: 0 auto;
-  padding: 20px;
+  padding: 25px;
   box-sizing: border-box;
   justify-content: space-evenly;
 }
 
 /* Botones de acción */
 .button-action {
-  width: 150px;
-  height: 40px;
-  border-radius: 10px;
-  box-shadow: 0.5px 5px 5px rgba(1, 1, 1, 0.4);
+  width: 180px;
+  height: 42px;
+  border-radius: 17px;
+  border: none;
+  box-shadow: 0px 2.5px 7px rgba(225, 250, 249, 0.5);
+  font-size: 18px;
+  transition: all 0.5s;
 }
 
-/* Botón para encriptar */
+/* Botón para encriptar y copiar */
 .text-actions-buttons > button:nth-child(1) {
-  background: lightblue;
+  background: #e2c2ac;
+}
+
+.text-actions-buttons > button:nth-child(1):hover {
+  background: #d1b19b;
+  transform: scale(1.04);
 }
 
 /* Botón para desencriptar */
 .text-actions-buttons > button:nth-child(2) {
-  background: lightslategray;
+  background: #b3aaae;
+}
+
+.text-actions-buttons > button:nth-child(2):hover {
+  background: #a2999e;
+  transform: scale(1.04);
 }
 
 /* Área de salida de texto y botones de acción */
@@ -77,9 +120,16 @@ main {
   align-items: center;
 }
 
-/* Selección de botón 'copiar' */
-.text-output > button:first-child {
-  background: red;
+/* Área de salida de texto con imagen de referencia cuando no hay texto que mostrar */
+.text-output > textarea {
+  background: url(../images/no-text.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Despliegue del botón de copiar la salida generada */
+#copy {
+  display: none;
 }
 
 /* Estilos para el pie de página */
@@ -89,15 +139,38 @@ main {
   width: 100%;
   height: auto;
   padding: 40px 0;
-  bottom: 0;
   box-sizing: border-box;
   text-align: center;
 }
 
 /* Estilos para el nombre */
 .info-author > p {
-  font-size: 12px;
+  font-size: 15px;
   color: #FFFFFF;
   font-weight: bold;
   margin: 20px auto;
 }
+
+/* Contenedor de las imagenes */
+.img-media {
+  width: 15%;
+  padding: 1.3%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Imagenes de enlace a redes sociales */
+.link-media {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Estilos para pantallas móviles de 480 a 767px
+@media only screen and (min-width:480px) and (max-width:767px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+} */
