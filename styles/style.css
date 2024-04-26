@@ -27,7 +27,7 @@ main {
   resize: none;
   width: 95%;
   margin: 0 auto;
-  height: 400px;
+  height: auto;
   margin-bottom: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -134,7 +134,7 @@ main {
 
 /* Estilos para el pie de página */
 .info-author {
-  background-image: url('/images/texture-background.jpg');
+  background-image: url(../images/texture-background.jpg);
   clear: both;
   width: 100%;
   height: auto;
@@ -207,3 +207,43 @@ main {
   }
 }
 
+/* Estilos para pantallas móviles de 480 a 1000px */
+@media only screen and (min-width:480px) and (max-width:1000px) and(min-height: 360px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-input {
+    width: 90%;
+  }
+
+  .text-io::placeholder {
+    font-size: 20px;
+  }
+
+  .text-info {
+    font-size: 10px;
+  }
+
+  .symbol-info {
+    padding: 10px;
+    margin: 0 5px;
+  }
+
+  .button-action {
+    width: 120px;
+    height: 30px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .text-output {
+    width: 90%;
+  }
+
+  .img-media {
+    width: 50%;
+  }
+}
