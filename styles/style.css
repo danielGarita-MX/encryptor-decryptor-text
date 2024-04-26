@@ -40,7 +40,6 @@ main {
   border: none;
   color: #dad2d8;
   font-weight: bold;
-
 }
 
 /* Estilos para el 'placeholder' de un textarea */
@@ -166,8 +165,64 @@ main {
   max-height: 50px;
 }
 
-/* Estilos para pantallas móviles de 480 a 1000px */
-@media only screen and (min-width:480px) and (max-width:1080px) {
+/* Estilos para pantallas móviles de no más de 576px */
+@media only screen and (max-width:576px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-input {
+    width: 90%;
+  }
+
+  .text-io {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .text-io::placeholder {
+    font-size: 15px;
+  }
+
+  .text-info {
+    font-size: 10px;
+  }
+
+  .symbol-info {
+    padding: 10px;
+    margin: 0 5px;
+  }
+
+  .button-action {
+    width: 80px;
+    height: 25px;
+    border-radius: 10px;
+    font-size: 12px;
+    box-shadow: none;
+  }
+
+  .text-output {
+    width: 90%;
+  }
+
+  .text-output > textarea {
+    background-size: contain;
+  }
+
+  .img-media {
+    width: 35%;
+  }
+
+  .link-media {
+    max-width: 35px;
+    max-height: 35px;
+  }
+}
+
+/* Estilos para pantallas móviles de 577 a 768px */
+@media only screen and (min-width:577px) and (max-width:768px) {
   main {
     display: flex;
     flex-direction: column;
