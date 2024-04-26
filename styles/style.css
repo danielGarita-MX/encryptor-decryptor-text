@@ -167,7 +167,7 @@ main {
 }
 
 /* Estilos para pantallas móviles de 480 a 1000px */
-@media only screen and (min-width:480px) and (max-width:1000px) {
+@media only screen and (min-width:480px) and (max-width:1080px) {
   main {
     display: flex;
     flex-direction: column;
