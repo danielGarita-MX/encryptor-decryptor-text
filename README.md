@@ -4,4 +4,4 @@
 <li align="left">CSS3</li>
 <li align="left">JavaScript</li>
 <h2 align="center">!Proyecto completado 🍾!</h2>
-![Insignia de finalización](https://d335luupugsy2.cloudfront.net/cms%2Ffiles%2F10224%2F1671210503Prancheta_3.png?utm_campaign=alura_latam_-_challenge_email_projeto_1_esp&utm_medium=email&utm_source=RD+Station)
+![insignia-finalización](https://github.com/danielGarita-MX/encryptor-decryptor-text/assets/83034900/304350de-1dd7-4901-9339-ab36319e94ee)
