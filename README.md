@@ -4,5 +4,9 @@
 <li align="left">CSS3</li>
 <li align="left">JavaScript</li>
 <h2 align="center">!Proyecto completado 🍾!</h2>
-![Insignia de finalización](https://github.com/danielGarita-MX/encryptor-decryptor-text/assets/83034900/f8e1e955-6ac1-4abe-a6fd-1b86dd5972a4)
+<div align="center">
+  <img src="https://github.com/danielGarita-MX/encryptor-decryptor-text/assets/83034900/f8e1e955-6ac1-4abe-a6fd-1b86dd5972a4" Alt="Insignia 
+            de finalización" align="center" width="240" height="240"><br/>
+  <p><i>Insignia de finalización</i></p>
+</div>
 
