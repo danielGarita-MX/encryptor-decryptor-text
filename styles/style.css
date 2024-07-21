@@ -1,262 +1,612 @@
-/* Hoja de estilos para la página 'index.html' */
+/* 
+  * Estilos para la página centrados en el diseño 'mobile-first'
+*/
 
-/* Contenedor principal 'main' que contiene a el área de texto a encriptar / desencriptar
-   y al contenedor de los botones de acción */
-main {
-  background: linear-gradient(#3a506b 57%, #1c2541);
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  height: auto;
-  overflow: hidden;
+/*
+  * Estilos para el tema claro
+*/
+:root {
+  --bg-color: #F3F8FE;
+  --bg-btn-decrypt-color: #878F9A;
+  --bg-btn-encrypt-color: #4A79B8;
+  --info-color: #1A1A1A;
+  --bg-input-color: #FFF;
+  --bg-btn-encrypt-copy: #FFF;
+
+  --txt-color: #1A1A1A;
+  --info-txt-color: #FF0A0A;
+
+  --theme-icon: url("../images/dark_theme.png");
+  --info-icon: url("../images/dark_info.png");
+  --info-icon-large: url("../images/dark_info-large.png");
+  --footer-bg-image: url("../images/texture-background.jpg");
+
+  --shadow-btn: rgba(26, 26, 26, 0.5);
 }
 
-/* Contenedor de área de cáptura de texto y botones de acción (encriptar / desencriptar) */
-.text-input {
-  width: 60%;
-  height: auto;
-  padding: 2%;
+/*
+  * Estilos para el tema oscuro
+*/
+.dark-theme {
+  --bg-color: #333;
+  --info-color: #FFF;
+  --bg-input-color: #666;
+  --bg-btn-encrypt-copy: #FFF;
+
+  --txt-color: #FFF;
+  --info-txt-color: #FF0A0A;
+
+  --theme-icon: url("../images/light_theme.png");
+  --info-icon: url("../images/light_info.png");
+  --info-icon-large: url("../images/light_info-large.png");
+
+  --shadow-btn: rgba(255, 255, 255, 0.5);
+}
+
+/*
+  * Estilos para el resto de la página
+*/
+body {
+  background-color: var(--bg-color);
+
+  transition: all 1s ease;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  width: 100vw;
+
   box-sizing: border-box;
-  float: left;
+
+  padding: 1rem 1.07rem;
+}
+
+.header_theme-toggle {
+  background-color: transparent;
+
+  border: none;
+  border-radius: 50%;
+
+  background-image: var(--theme-icon);
+
+  width: 2.14rem;
+  height: 2.14rem;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+}
+
+main {
+  margin: 0;
+
+  width: 100%;
+
+  padding: 0.5rem 1rem 1rem 1rem;
+
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
-/* Estilos para el área de captura y salida de texto */
-.text-io {
-  resize: none;
-  width: 95%;
-  margin: 0 auto;
-  height: auto;
-  margin-bottom: 20px;
-  padding: 20px;
+.text-input {
+  width: 100%;
+
+  padding: 0.5rem;
+
   box-sizing: border-box;
-  font-size: 20px;
-  line-height: 30px;
-  border-radius: 20px;
-  background: linear-gradient(#3a506b 80%, #1c2541);
-  box-shadow: 0px 0px 30px rgba(225, 250, 249, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.84rem;
+}
+  
+.text-io {
+  order: 2;
+
+  resize: none;
+
+  width: 100%;
+  max-height: 15rem;
+  
+  margin: 0;
+  
+  padding: 1rem;
+
+  box-sizing: border-box;
+
+  font-size: 1rem;
+  line-height: 2rem;  
+  color: var(--txt-color);
+  font-weight: 500;
+
+  border-radius: 1rem;
   border: none;
-  color: #dad2d8;
-  font-weight: bold;
+
+  background: var(--bg-input-color);
+  box-shadow: 0 0 0.8rem rgba(26, 26, 26, 0.5);
+
+  outline-color: var(--txt-color-black);
 }
 
-/* Estilos para el 'placeholder' de un textarea */
 .text-io::placeholder {
-  color: #dad2d8;
-  text-align: center;
-  font-size: 30px;
-  opacity: 0.4;
+  color: var(--txt-color-black);
+  
+  font-size: 1rem;
+
+  opacity: 0.5;
 }
 
-/* Textos informativos */
 .text-info {
-  text-align: center;
-  font-size: 15px;
-  color: #FFFFFF;
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.31rem 0.84rem;
 }
 
-/* Simbolo informativo */
 .symbol-info {
-  padding: 10px;
-  background: url(../images/information.png);
+  background-image: var(--info-icon);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 10px;
+
+  width: 41px;
+  height: 20px;
 }
 
-/* Contenedor de botones de acción (encriptar / desencriptar) */
+.content-info {
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  text-align: center;
+  
+  color: var(--info-color);
+}
+
 .text-actions-buttons {
-  width: 90%;
+  order: 3;
+
+  width: 100%;
+
   display: flex;
-  margin: 0 auto;
-  padding: 25px;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 0.5rem 0.5rem;
   box-sizing: border-box;
-  justify-content: space-evenly;
 }
 
-/* Botones de acción */
 .button-action {
-  width: 180px;
-  height: 42px;
-  border-radius: 17px;
+  width: 47%;
+  height: 2.4rem;
+
+
+  border-radius: 0.6rem;
   border: none;
-  box-shadow: 0px 2.5px 7px rgba(225, 250, 249, 0.5);
-  font-size: 18px;
-  transition: all 0.5s;
+
+  font-size: 1.1rem;
+
+  transition: all 0.5s ease;
+
+  background-color: var(--bg-btn-encrypt-color);
+
+  color: var(--bg-btn-encrypt-copy);
+
+  cursor: pointer;
 }
 
-/* Botón para encriptar y copiar */
-.text-actions-buttons > button:nth-child(1) {
-  background: #e2c2ac;
-}
-
-.text-actions-buttons > button:nth-child(1):hover {
-  background: #d1b19b;
-  transform: scale(1.04);
-}
-
-/* Botón para desencriptar */
 .text-actions-buttons > button:nth-child(2) {
-  background: #b3aaae;
+  background-color: var(--bg-btn-decrypt-color);
+
+  border: 1px solid var(--bg-btn-encrypt-color);
+
+  cursor: pointer;
 }
 
-.text-actions-buttons > button:nth-child(2):hover {
-  background: #a2999e;
-  transform: scale(1.04);
-}
 
-/* Área de salida de texto y botones de acción */
 .text-output {
-  width: 38%;
-  height: auto;
-  padding: 2%;
-  float: right;
+  width: 100%;
+  min-height: 20rem;
+
+  padding: 0.5rem;
+
   box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
-/* Área de salida de texto con imagen de referencia cuando no hay texto que mostrar */
-.text-output > textarea {
-  background: url(../images/no-text.png);
+.output-area{
+  background: url("../images/no_output.png");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+  
+  background-color: var(--bg-input-color);
 }
 
-/* Despliegue del botón de copiar la salida generada */
-#copy {
+.button-copy {
+  width: 47%;
+  height: 2.4rem;
+
+
+  border-radius: 0.6rem;
+  border: none;
+
+  font-size: 1.1rem;
+
+  transition: all 0.5s ease;
+  
+  background-color: var(--bg-btn-encrypt-color);
+  color: var(--bg-btn-encrypt-copy);
+
   display: none;
 }
 
-/* Estilos para el pie de página */
 .info-author {
-  background-image: url(../images/texture-background.jpg);
-  clear: both;
+  background-image: var(--footer-bg-image);
+
   width: 100%;
-  height: auto;
-  padding: 40px 0;
+
+  max-height: 15rem;
+
+  padding: 2rem 1rem;
+
   box-sizing: border-box;
+
   text-align: center;
 }
 
-/* Estilos para el nombre */
 .info-author > p {
-  font-size: 15px;
-  color: #FFFFFF;
-  font-weight: bold;
-  margin: 20px auto;
+  font-size: 1rem;
+  color: var(--bg-btn-encrypt-copy);
+  font-weight: 600;
+  line-height: 1.8rem;
+
+  margin: 1.4rem auto;
 }
 
-/* Contenedor de las imagenes */
 .img-media {
-  width: 15%;
-  padding: 1.3%;
+  width: 100%;
+
   margin: 0 auto;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1.3rem;
 }
 
-/* Imagenes de enlace a redes sociales */
 .link-media {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
 }
 
-/* Estilos para pantallas móviles de no más de 576px */
-@media only screen and (max-width:576px) {
+/*
+  * Estilos que se aplican bajo ciertas condiciones (click, salida, etc.). Utilizados en el JavaScript
+*/
+
+.focus-output {
+  background: var(--bg-input-color);
+  border: 2px solid var(--bg-btn-encrypt-color);
+}
+
+.button-copy-success {
+  background-color: #228B22;
+}
+
+/*
+  * Estilos responsivos
+*/
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+  
+  header {  
+    padding: 1.2rem 1.7rem 0 0;
+  }
+  
+  .header_theme-toggle {  
+    width: 2.14rem;
+    height: 2.14rem;
+  }
+  
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
   }
-
-  .text-input {
-    width: 90%;
-  }
-
+    
   .text-io {
-    font-size: 15px;
-    line-height: 20px;
-  }
+    padding: 0.8rem;
+  
+    font-size: 1.1rem;
 
-  .text-io::placeholder {
-    font-size: 15px;
+    border-radius: 0.8rem;
   }
-
-  .text-info {
-    font-size: 10px;
+  
+  .symbol-info {  
+    width: 31px;
+    height: 31px;
   }
-
-  .symbol-info {
-    padding: 10px;
-    margin: 0 5px;
+  
+  .text-actions-buttons {
+    padding: 0.8rem 0.8rem;
   }
-
+  
   .button-action {
-    width: 80px;
-    height: 25px;
-    border-radius: 10px;
-    font-size: 12px;
-    box-shadow: none;
+    height: 2.7rem;
+  
+    border-radius: 0.5rem;
+  }
+
+  .button-copy {
+    width: 43%;
+    height: 2.7rem;
+    border-radius: 0.5rem;
   }
 
   .text-output {
-    width: 90%;
-  }
+    min-height: 22rem;
+  
+    font-size: 1.1rem;
 
-  .text-output > textarea {
-    background-size: contain;
+    border-radius: 0.8rem;
   }
-
+  
   .img-media {
-    width: 35%;
-  }
-
-  .link-media {
-    max-width: 35px;
-    max-height: 35px;
+    gap: 2rem;
   }
 }
 
-/* Estilos para pantallas móviles de 577 a 768px */
-@media only screen and (min-width:577px) and (max-width:768px) {
+@media (min-width: 1024px) {
+  html {
+    font-size: 22px;
+  }
+  
+  header {
+    padding: 1rem 2.5rem 1rem 0;
+  }
+  
+  .header_theme-toggle {
+    width: 2rem;
+    height: 2rem;
+  }
+  
   main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    padding: 0 1.5rem 5rem 1.5rem;
 
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
   .text-input {
-    width: 90%;
-  }
+    width: auto;
 
-  .text-io::placeholder {
-    font-size: 20px;
+    flex-grow: 2;
+  
+    gap: 1rem;
   }
+    
+  .text-io {
+    order: 1;
 
+    max-height: 17rem;
+
+    padding: 0.8rem;
+  
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  
+    border-radius: 0.7rem;
+  }
+  
+  .text-io::placeholder {    
+    font-size: 0.85rem;
+  }
+  
   .text-info {
-    font-size: 10px;
+    order: 2;
   }
-
-  .symbol-info {
-    padding: 10px;
-    margin: 0 5px;
+  
+  .symbol-info {  
+    width: 36px;
+    height: 36px;
   }
-
+  
+  .content-info {
+    font-size: 0.85rem;
+  }
+  
+  .text-actions-buttons {
+    gap: 3.5rem;
+  
+    padding: 0;
+  }
+  
   .button-action {
-    width: 120px;
-    height: 30px;
-    border-radius: 12px;
-    font-size: 15px;
+    width: 40%;
+ 
+    height: 2.65rem;
+  
+    border-radius: 0.45rem;
+
+    font-size: 1.1rem;
   }
 
-  .text-output {
-    width: 90%;
-  }
-
-  .img-media {
+  .button-copy {
     width: 50%;
+    height: 2.65rem;
+    border-radius: 0.45rem;
+
+    font-size: 1.1rem;
+  }
+  
+  .text-actions-buttons > button:nth-child(1):hover,
+  .text-actions-buttons > button:nth-child(2):hover,
+  .header_theme-toggle:hover,
+  .button-copy:hover {
+    box-shadow: 0 0 0.55rem var(--shadow-btn);
+  }
+  
+  .text-output {
+    flex-grow: 1;
+
+    width: auto;
+
+    justify-content: space-between;
+  }
+  
+  .img-media {
+    gap: 1.55rem;
+  }
+  
+  .link-media {
+    max-width: 2.65rem;
+    max-height: 2.65rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 24px;
+  }
+  
+  main {
+    padding: 0.5rem 3rem 6.5rem 3rem;
+  }
+    
+  .text-io {
+    min-height: 18.25rem;
+
+    font-size: 1.15rem;
+    line-height: 1rem;
+
+    padding: 1rem;
+  }
+  
+  .text-io::placeholder {
+    font-size: 1rem;
+  }
+  
+  .symbol-info {  
+    width: 35px;
+    height: 35px;
+  }
+  
+  .content-info {
+    font-size: 0.85rem;
+  }
+  
+  .button-action {
+    width: 38%;
+ 
+    height: 3.05rem;
+  
+    font-size: 0.95rem;
+  }
+
+  .button-copy {
+    width: 50%;
+ 
+    height: 3.05rem;
+  
+    font-size: 1.1rem;
+  }
+
+  .info-author {  
+    padding: 1.85rem 0.85rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 28px;
+  }
+  
+  header {
+    padding: 1.5rem 4rem 1.3rem 0;
+  }
+  
+  .header_theme-toggle {
+    width: 3.20rem;
+    height: 3.20rem;
+  }
+  
+  main {
+    padding: 0.5rem 4rem 10rem 4rem;
+  }
+    
+  .text-io {
+    min-height: 30rem;
+  
+    font-size: 1.70rem;
+    line-height: 1.5rem;
+
+    padding: 1.5rem;
+  }
+  
+  .text-io::placeholder {
+    font-size: 1.55rem;
+  }
+  
+  .symbol-info {  
+    width: 72px;
+    height: 72px;
+  }
+  
+  .content-info {
+    font-size: 1.30rem;
+  }
+  
+  .button-action {
+    width: 40%;
+ 
+    height: 4rem;
+  
+    font-size: 1.55rem;
+  }
+
+  .button-copy {
+    width: 50%;
+ 
+    height: 4rem;
+  
+    font-size: 1.55rem;
+  }
+
+  .info-author {
+    max-height: 18rem;
+  
+    padding: 3rem 2rem;
+  }
+  
+  .info-author > p {
+    font-size: 1.5rem;
+  }
+  
+  .img-media {
+    margin-top: 2.5rem;
+
+    gap: 4rem;
+  }
+  
+  .link-media {
+    max-width: 3.25rem;
+    max-height: 3.25rem;
   }
 }

@@ -3,31 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <meta name="author" content="Brandon Daniel Garita Romero">
-    <meta name="description" content="Challenge 1 (Alura LATAM): Encriptador 
+    <meta name="description" content="Challenge ONE (Alura LATAM): Encriptador 
                                       - desencriptador de texto.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="./images/fav-icon.png">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./styles/reset.css" type="text/css">
     <link rel="stylesheet" href="./styles/style.css" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
-    <title>Challenge One</title>
+    <title>Challenge One: Encriptador - desencriptador de texto</title>
   </head>
 
   <body>
+    <header>
+      <button class="header_theme-toggle"></button>
+    </header>
+
     <main>
       <div class="text-input">
-        <textarea cols="20" rows="10" placeholder="Ingresa el texto a encriptar"
+        <textarea cols="20" rows="10" placeholder="Introduce el texto a encriptar"
                   autofocus name="textInput" class="text-io" id="textRead"></textarea>
         
         <span class="text-info">
           <span class="symbol-info"></span>
-          Solo letras minúsculas sin carácteres especiales.
+          <p class="content-info">Los carácteres especiales y los acentos, no son valídos.</p>
         </span>
 
         <div class="text-actions-buttons">
@@ -37,25 +40,22 @@
       </div>
 
       <div class="text-output">
-        <textarea cols="20" rows="10" readonly name="textOutput" class="text-io" id="textView"
+        <textarea cols="20" rows="10" readonly name="textOutput" class="text-io output-area" id="textView"
                   disabled></textarea>
                   
-        <div id="display">
-          <span class="text-info">
-            <span class="symbol-info"></span>
-            Ningún texto fue encontrado.
-          </span>
+        <div id="msg_no_output" class="text-info">
+          <p class="content-info">Ningún texto fue encontrado.</p>
         </div>
 
         <div class="text-actions-buttons">
-          <button title="Copiar" class="button-action" id="copy">Copiar</button>
+          <button title="Copiar" class="button-copy" id="copy">Copiar</button>
         </div>
       </div>
     </main>
 
     <footer>
       <div class="info-author">
-        <p>&#169; 2024 Brandon Daniel Garita Romero</p>
+        <p>&#169; Brandon Daniel Garita Romero  2024 </p>
 
         <div class="img-media">
           <a href="https://github.com/danielGarita-MX?tab=repositories" target="_blank" 
@@ -71,6 +71,7 @@
       </div>
     </footer>
 
-    <script src="./scripts/features.js"></script>
+    <script src="./scripts/encrypt_decrypt.js"></script>
+    <script src="./scripts/app_theme.js"></script>
   </body>
 </html>
